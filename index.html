@@ -351,13 +351,49 @@
           <span>.github/workflows/deploy.yml</span>
           <span class="run">run #128 <i class="fas fa-check-circle" style="color:var(--green)"></i></span>
         </div>
-        <div class="pipeline-stages">
-          <div class="pstage done"><span class="icon"><i class="fas fa-check"></i></span><span class="label">Build — Docker multi-stage</span><span class="status">passed</span></div>
-          <div class="pstage done"><span class="icon"><i class="fas fa-check"></i></span><span class="label">Test — unit &amp; integration</span><span class="status">passed</span></div>
-          <div class="pstage done"><span class="icon"><i class="fas fa-check"></i></span><span class="label">Scan — SonarQube · Trivy · Checkov</span><span class="status">passed</span></div>
-          <div class="pstage active"><span class="icon"><i class="fas fa-arrows-rotate"></i></span><span class="label">Deploy — ArgoCD sync</span><span class="status">running</span></div>
-          <div class="pstage"><span class="icon"><i class="fas fa-eye"></i></span><span class="label">Monitor — Prometheus / Grafana</span><span class="status">queued</span></div>
-        </div>
+       <div class="pipeline-stages">
+  <div class="pstage done">
+    <span class="icon"><i class="fas fa-check"></i></span>
+    <span class="label">Build — Docker multi-stage</span>
+    <span class="status">passed</span>
+  </div>
+
+  <div class="pstage done">
+    <span class="icon"><i class="fas fa-check"></i></span>
+    <span class="label">Test — Unit &amp; Integration</span>
+    <span class="status">passed</span>
+  </div>
+
+  <div class="pstage done">
+    <span class="icon"><i class="fas fa-check"></i></span>
+    <span class="label">Scan — SonarQube · Trivy · Checkov</span>
+    <span class="status">passed</span>
+  </div>
+
+  <div class="pstage done">
+    <span class="icon"><i class="fas fa-check"></i></span>
+    <span class="label">Provision — Terraform (AWS/Azure/GCP)</span>
+    <span class="status">passed</span>
+  </div>
+
+  <div class="pstage done">
+    <span class="icon"><i class="fas fa-check"></i></span>
+    <span class="label">Configure — Ansible Playbooks</span>
+    <span class="status">passed</span>
+  </div>
+
+  <div class="pstage active">
+    <span class="icon"><i class="fas fa-cloud-upload-alt"></i></span>
+    <span class="label">Deploy — Cloud &amp; ArgoCD Sync</span>
+    <span class="status">running</span>
+  </div>
+
+  <div class="pstage">
+    <span class="icon"><i class="fas fa-eye"></i></span>
+    <span class="label">Monitor — Prometheus / Grafana</span>
+    <span class="status">queued</span>
+  </div>
+</div>
       </div>
     </div>
   </div>
@@ -371,7 +407,7 @@
     <div class="about-grid">
     <div class="reveal">
       <p>I'm a <strong>Software Engineer</strong> specialized in <strong>DevOps, Cloud Engineering, and Artificial Intelligence</strong>, building reliable solutions at the intersection of software development, automation, cloud infrastructure, and security.</p>
-      <p>I focus on modern software delivery through <strong>DevOps and DevSecOps practices, CI/CD automation, GitOps workflows, Infrastructure as Code, Docker, Kubernetes, and cloud-native technologies</strong>.</p>
+      <p>I focus on modern software delivery through <strong>DevOps and DevSecOps practices, CI/CD automation, GitOps workflows, Infrastructure as Code, Kubernetes, and cloud-native technologies</strong>.</p>
       <p>Passionate about engineering scalable, secure, and automated solutions that bridge development and operations. 🚀</p>
     </div>
       <div class="contact-list reveal">
@@ -611,6 +647,32 @@
     <div class="project-grid">
 
       <div class="project-card reveal">
+  <div class="project-top">
+    <h3 class="project-title">Secure Cloud Infrastructure Automation</h3>
+    <a href="https://github.com/Emna-chebbi/Secure-Cloud-Infra-Automation" class="project-gh" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+
+  <p class="project-desc">
+    Designed and automated a production-style Azure infrastructure using Terraform and Ansible, implementing zero-trust networking, approval-gated CI/CD, infrastructure security scanning, and Prometheus/Grafana monitoring to deliver a fully reproducible DevSecOps platform.
+  </p>
+
+  <div class="project-tags">
+    <span>Azure</span>
+    <span>Terraform</span>
+    <span>Ansible</span>
+    <span>Docker</span>
+    <span>GitHub Actions</span>
+    <span>Checkov</span>
+    <span>Trivy</span>
+    <span>Prometheus</span>
+    <span>Grafana</span>
+    <span>DevSecOps</span>
+  </div>
+</div>
+
+      <div class="project-card reveal">
         <div class="project-top">
           <h3 class="project-title">Enterprise DevSecOps &amp; GitOps Platform</h3>
           <a href="https://github.com/Emna-chebbi/DevSecOps-Project" class="project-gh" target="_blank"><i class="fab fa-github"></i></a>
@@ -648,14 +710,6 @@
 
       <div class="project-card reveal">
         <div class="project-top">
-          <h3 class="project-title">Big Data Ingestion Pipeline</h3>
-        </div>
-        <p class="project-desc">Scalable pipeline in Cloudera integrating Kafka, Flume, and Sqoop to automate ingestion from relational databases into Hadoop clusters.</p>
-        <div class="project-tags"><span>Cloudera</span><span>Hadoop</span><span>Kafka</span><span>Flume</span></div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-top">
           <h3 class="project-title">Census Income Classification</h3>
           <a href="https://github.com/Emna-chebbi/Census-Income-Dataset" class="project-gh" target="_blank"><i class="fab fa-github"></i></a>
         </div>
@@ -676,6 +730,30 @@
     <div class="eyebrow">verify --all certificates</div>
     <h2 class="section-title">Certifications</h2>
     <div class="cert-grid">
+
+
+<div class="cert-card reveal">
+  <h3 class="cert-title">Certified Infrastructure as Code Management Developer</h3>
+  <p class="cert-issuer">Harness</p>
+  <p class="cert-desc">
+    Infrastructure as Code automation, cloud infrastructure management, IaCM pipelines, Git-based workflows, configuration drift detection, and governance-driven infrastructure delivery.
+  </p>
+  <a class="cert-link" href="https://www.credly.com/badges/ee7702bb-66e1-4c72-b830-37f9ef7e2fcc/public_url" target="_blank">
+    View credential <i class="fas fa-arrow-up-right-from-square"></i>
+  </a>
+</div>
+
+<div class="cert-card reveal">
+  <h3 class="cert-title">Qualys Certified Specialist — Kubernetes &amp; Container Security</h3>
+  <p class="cert-issuer">Qualys</p>
+  <p class="cert-desc">
+    Kubernetes and container security across the application lifecycle, including image vulnerability management, runtime protection, container hardening, and DevSecOps security integration within CI/CD pipelines.
+  </p>
+  <a class="cert-link" href="https://www.linkedin.com/posts/emna-chebbi1_qualys-certified-kubernetes-and-container-activity-7485294258455908352-fo5R?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEfiMQgBxcDRXN_ahfSgHexJRbiaIJRy0I4" target="_blank">
+    View credential <i class="fas fa-arrow-up-right-from-square"></i>
+  </a>
+</div>
+
 
       <div class="cert-card reveal">
         <h3 class="cert-title">Certified Continuous Delivery &amp; GitOps Developer</h3>
@@ -706,24 +784,10 @@
       </div>
 
       <div class="cert-card reveal">
-        <h3 class="cert-title">IT Specialist: Java</h3>
-        <p class="cert-issuer">Certiport</p>
-        <p class="cert-desc">Java fundamentals, OOP concepts, data structures, and app development.</p>
-        <a class="cert-link" href="https://www.credly.com/badges/c455d9a3-7971-41ea-b3cf-fdb40b4c4669/public_url" target="_blank">View credential <i class="fas fa-arrow-up-right-from-square"></i></a>
-      </div>
-
-      <div class="cert-card reveal">
         <h3 class="cert-title">IT Specialist: Python</h3>
         <p class="cert-issuer">Certiport</p>
         <p class="cert-desc">Python fundamentals, data structures, OOP, algorithms, problem-solving.</p>
         <a class="cert-link" href="https://www.credly.com/badges/1d93b912-cb85-4905-b33f-e109e0f76a4e/public_url" target="_blank">View credential <i class="fas fa-arrow-up-right-from-square"></i></a>
-      </div>
-
-      <div class="cert-card reveal">
-        <h3 class="cert-title">Scrum Master Certification</h3>
-        <p class="cert-issuer">LearnQuest</p>
-        <p class="cert-desc">Agile methodologies, Scrum framework, team facilitation, project management.</p>
-        <a class="cert-link" href="https://www.coursera.org/account/accomplishments/specialization/ZPA6ZHH4H3BD" target="_blank">View credential <i class="fas fa-arrow-up-right-from-square"></i></a>
       </div>
 
       <div class="cert-card reveal">
