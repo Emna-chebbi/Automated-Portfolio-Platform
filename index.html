@@ -9,74 +9,75 @@
 <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="scanlines" aria-hidden="true"></div>
+<div class="aurora" aria-hidden="true"></div>
+<div class="grid-backdrop" aria-hidden="true"></div>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="topbar" id="topbar">
-  <div class="wrap topbar-inner">
-    <a href="#top" class="brand">
-      <span class="brand-dot" aria-hidden="true"></span>
-      emna_chebbi
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="nav" id="navLinks" aria-label="Primary">
-      <a href="#about">about</a>
-      <a href="#skills">skills</a>
-      <a href="#experience">experience</a>
-      <a href="#projects">projects</a>
-      <a href="#certifications">certs</a>
-      <a href="#contact">contact</a>
-    </nav>
+<nav class="navbar" id="navbar">
+  <div class="wrap">
+    <a href="#top" class="brand"><span class="dot"></span>emna@devsecops:~$</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><i class="ti">☰</i></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#top" class="active">home</a></li>
+      <li><a href="#about">about</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#experience">experience</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#certifications">certs</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
   </div>
-</header>
+</nav>
 
 <main id="main">
 
   <!-- ============ HERO ============ -->
-  <section class="hero" id="top">
-    <div class="wrap hero-inner">
-      <div class="hero-copy">
-        <p class="hero-kicker">Available for DevOps &amp; DevSecOps roles</p>
-        <h1 class="hero-name">Emna Chebbi</h1>
-        <p class="hero-role">Software Engineer, focused on DevOps, Cloud &amp; DevSecOps</p>
-        <p class="hero-lede">
-          I take infrastructure from manual and unguarded to automated, observed, and hard to break into —
-          Kubernetes platforms, GitOps delivery, and security gates that catch problems before they ship,
-          not after.
-        </p>
-        <div class="hero-actions">
-          <a href="assets/Emna-Chebbi-CV.pdf" class="btn btn-primary" target="_blank" rel="noopener">Download résumé</a>
-          <a href="https://github.com/Emna-chebbi" class="btn btn-ghost" target="_blank" rel="noopener">View GitHub</a>
+  <section id="top" class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-identity">
+            <div class="hero-avatar-wrap">
+              <div class="hero-avatar-ring"></div>
+              <img class="hero-avatar" src="assets/profile.png" alt="Emna Chebbi">
+            </div>
+            <div class="hero-identity-text">
+              <div class="status-pill"><span class="dot"></span>OPEN TO DEVOPS &amp; DEVSECOPS ROLES</div>
+              <h1>Emna Chebbi<br><span class="accent">DevOps Engineer</span></h1>
+            </div>
+          </div>
+          <p class="lead">
+            I take infrastructure from manual and unguarded to automated, observed, and hard to break
+            into — Kubernetes platforms, GitOps delivery, and security gates that catch problems before
+            they ship, not after.
+          </p>
+          <div class="hero-ctas">
+            <a href="assets/Emna-Chebbi-CV.pdf" class="btn btn-primary" target="_blank" rel="noopener">View Resume</a>
+            <a href="https://github.com/Emna-chebbi" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+            <a href="#contact" class="btn btn-outline">Get in touch</a>
+          </div>
         </div>
-      </div>
 
-      <!-- SIGNATURE ELEMENT: a real terminal window that boots on load -->
-      <div class="term" role="img" aria-label="Terminal window showing a boot sequence that ends by reporting Emna's role, stack, and current status as online.">
-        <div class="term-bar">
-          <span class="term-dot term-dot-r"></span>
-          <span class="term-dot term-dot-a"></span>
-          <span class="term-dot term-dot-g"></span>
-          <span class="term-title">emna@devsecops: ~</span>
-        </div>
-        <div class="term-body" id="termBody">
-          <div class="term-line" data-text="whoami"></div>
-          <div class="term-line" data-text="devops-engineer · tunis, tn"></div>
-          <div class="term-line" data-text="cat role.stack"></div>
-          <div class="term-line" data-text="kubernetes · argocd · terraform · ansible"></div>
-          <div class="term-line" data-text="systemctl status delivery-pipeline"></div>
-          <div class="term-line term-ok" data-text="● active — security gates: 4/4 passing"></div>
-          <div class="term-line term-status">
-            <span>uptime:</span>
-            <span id="termUptime">00:00:00</span>
-            <span class="term-caret" aria-hidden="true"></span>
+        <!-- SIGNATURE ELEMENT: CI/CD pipeline stage card, restored and re-animated -->
+        <div class="pipeline-card" role="img" aria-label="CI/CD pipeline: build, test, and scan stages complete, deploy stage running, monitor stage queued.">
+          <div class="pipeline-card-head">
+            <span>.github/workflows/deploy.yml</span>
+            <span class="run">run #128</span>
+          </div>
+          <div class="pipeline-stages" id="pipelineStages">
+            <div class="pstage done"><span class="icon">✓</span><span class="label">Build — Docker multi-stage</span><span class="status">passed</span></div>
+            <div class="pstage done"><span class="icon">✓</span><span class="label">Test — Unit &amp; Integration</span><span class="status">passed</span></div>
+            <div class="pstage done"><span class="icon">✓</span><span class="label">Scan — SonarQube · Trivy · Checkov</span><span class="status">passed</span></div>
+            <div class="pstage done"><span class="icon">✓</span><span class="label">Provision — Terraform modules</span><span class="status">passed</span></div>
+            <div class="pstage done"><span class="icon">✓</span><span class="label">Configure — Ansible playbooks</span><span class="status">passed</span></div>
+            <div class="pstage active"><span class="icon">↑</span><span class="label">Deploy — Cloud &amp; ArgoCD sync</span><span class="status">running</span></div>
+            <div class="pstage"><span class="icon">◎</span><span class="label">Monitor — Prometheus / Grafana</span><span class="status">queued</span></div>
           </div>
         </div>
       </div>
@@ -86,9 +87,10 @@
   <!-- ============ ABOUT ============ -->
   <section class="section" id="about">
     <div class="wrap">
-      <p class="eyebrow">01 · about</p>
+      <p class="eyebrow">whoami</p>
+      <h2 class="section-title">About</h2>
       <div class="about-grid">
-        <div class="about-copy">
+        <div>
           <p>
             I'm a software engineer who ended up specializing in the part of the stack most people only
             notice when it breaks. I build the platforms that take code from a commit to a running,
@@ -110,16 +112,16 @@
         </div>
         <div class="contact-list">
           <a class="contact-row" href="https://github.com/Emna-chebbi" target="_blank" rel="noopener">
-            <span class="contact-k">GitHub</span>
-            <span class="contact-v">@Emna-chebbi</span>
+            <span class="glyph">gh</span>
+            <div><span class="k">GITHUB</span><span class="v">@Emna-chebbi</span></div>
           </a>
           <a class="contact-row" href="https://www.linkedin.com/in/emna-chebbi1" target="_blank" rel="noopener">
-            <span class="contact-k">LinkedIn</span>
-            <span class="contact-v">emna-chebbi1</span>
+            <span class="glyph">in</span>
+            <div><span class="k">LINKEDIN</span><span class="v">Emna Chebbi</span></div>
           </a>
           <a class="contact-row" href="mailto:emna.chebby19@gmail.com">
-            <span class="contact-k">Email</span>
-            <span class="contact-v">emna.chebby19@gmail.com</span>
+            <span class="glyph">@</span>
+            <div><span class="k">EMAIL</span><span class="v">emna.chebby19@gmail.com</span></div>
           </a>
         </div>
       </div>
@@ -127,55 +129,55 @@
   </section>
 
   <!-- ============ SKILLS ============ -->
-  <section class="section section-alt" id="skills">
+  <section class="section" id="skills">
     <div class="wrap">
-      <p class="eyebrow">02 · skills</p>
-      <h2 class="section-title">What I work with</h2>
-      <p class="section-sub">Grouped by the job each tool does, not alphabetically — that's how I actually reach for them.</p>
+      <p class="eyebrow">cat skills.yaml</p>
+      <h2 class="section-title">Skills &amp; Tools</h2>
+      <p class="section-sub">A structured overview of my technical stack across DevOps, cloud infrastructure, security, software engineering, and delivery practices.</p>
 
       <div class="skills-grid">
-        <div class="skill-card">
-          <h3><span class="skill-dot skill-dot-a"></span>DevOps &amp; cloud-native</h3>
+        <div class="skill-card devops">
+          <div class="skill-card-head"><span class="icn">▲</span><h3>DevOps &amp; Cloud Engineering</h3></div>
           <div class="tags">
             <span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Helm</span>
             <span class="tag">ArgoCD</span><span class="tag">GitOps</span><span class="tag">GitHub Actions</span>
-            <span class="tag">Jenkins</span><span class="tag">Linux</span><span class="tag">Git</span>
+            <span class="tag">Jenkins</span><span class="tag">CI/CD</span><span class="tag">Linux</span><span class="tag">Git</span>
           </div>
         </div>
-        <div class="skill-card">
-          <h3><span class="skill-dot skill-dot-b"></span>Cloud &amp; infrastructure as code</h3>
+        <div class="skill-card cloud">
+          <div class="skill-card-head"><span class="icn">☁</span><h3>Cloud &amp; Infrastructure as Code</h3></div>
           <div class="tags">
             <span class="tag">AWS</span><span class="tag">Microsoft Azure</span><span class="tag">Terraform</span>
-            <span class="tag">Ansible</span><span class="tag">Cloud-native architecture</span>
+            <span class="tag">Ansible</span><span class="tag">Infrastructure as Code</span><span class="tag">Cloud-Native Architecture</span>
           </div>
         </div>
-        <div class="skill-card">
-          <h3><span class="skill-dot skill-dot-c"></span>DevSecOps &amp; observability</h3>
+        <div class="skill-card security">
+          <div class="skill-card-head"><span class="icn">◈</span><h3>DevSecOps &amp; Observability</h3></div>
           <div class="tags">
-            <span class="tag">SonarQube</span><span class="tag">Trivy</span><span class="tag">Checkov</span>
+            <span class="tag">SonarQube / SonarCloud</span><span class="tag">Trivy</span><span class="tag">Checkov</span>
             <span class="tag">OWASP ZAP</span><span class="tag">Gitleaks</span><span class="tag">HashiCorp Vault</span>
             <span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Alertmanager</span><span class="tag">Loki</span>
           </div>
         </div>
-        <div class="skill-card">
-          <h3><span class="skill-dot skill-dot-d"></span>Software engineering</h3>
+        <div class="skill-card dev">
+          <div class="skill-card-head"><span class="icn">&lt;/&gt;</span><h3>Software Engineering</h3></div>
           <div class="tags">
             <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Python</span>
             <span class="tag">React</span><span class="tag">Angular</span><span class="tag">Node.js</span>
             <span class="tag">Next.js</span><span class="tag">Django</span><span class="tag">Flutter</span>
-            <span class="tag">REST</span><span class="tag">GraphQL</span>
+            <span class="tag">REST APIs</span><span class="tag">GraphQL</span>
           </div>
         </div>
-        <div class="skill-card">
-          <h3><span class="skill-dot skill-dot-e"></span>Data, AI &amp; enterprise</h3>
+        <div class="skill-card data">
+          <div class="skill-card-head"><span class="icn">◫</span><h3>Data, AI &amp; Enterprise</h3></div>
           <div class="tags">
-            <span class="tag">Python data analysis</span><span class="tag">Machine learning</span>
+            <span class="tag">Python Data Analysis</span><span class="tag">Machine Learning</span>
             <span class="tag">SQL</span><span class="tag">MongoDB</span><span class="tag">Power BI</span>
-            <span class="tag">SAP</span><span class="tag">ERP systems</span>
+            <span class="tag">SAP</span><span class="tag">ERP Systems</span>
           </div>
         </div>
-        <div class="skill-card">
-          <h3><span class="skill-dot skill-dot-f"></span>Ways of working</h3>
+        <div class="skill-card process">
+          <div class="skill-card-head"><span class="icn">☺</span><h3>Engineering Practices</h3></div>
           <div class="tags">
             <span class="tag">Agile</span><span class="tag">Scrum</span><span class="tag">Kanban</span>
             <span class="tag">Scrumban</span><span class="tag">Jira</span>
@@ -188,17 +190,16 @@
   <!-- ============ EXPERIENCE ============ -->
   <section class="section" id="experience">
     <div class="wrap">
-      <p class="eyebrow">03 · experience</p>
-      <h2 class="section-title">Where I've worked</h2>
+      <p class="eyebrow">git log --oneline experience</p>
+      <h2 class="section-title">Professional Experience</h2>
 
       <div class="exp-list">
-
-        <article class="exp-card exp-current">
+        <article class="exp-card current">
           <div class="exp-head">
             <div class="exp-who">
               <div class="exp-logo"><img src="assets/bebouncy.jpg" alt="Be Bouncy logo"></div>
               <div>
-                <h3 class="exp-company">Be Bouncy</h3>
+                <p class="exp-company">Be Bouncy</p>
                 <p class="exp-role">DevSecOps Engineer — Internship</p>
               </div>
             </div>
@@ -230,7 +231,7 @@
             <div class="exp-who">
               <div class="exp-logo"><img src="assets/pass.jpg" alt="PASS Consulting Group logo"></div>
               <div>
-                <h3 class="exp-company">PASS Consulting Group</h3>
+                <p class="exp-company">PASS Consulting Group</p>
                 <p class="exp-role">Software Engineer — Internship</p>
               </div>
             </div>
@@ -257,7 +258,7 @@
             <div class="exp-who">
               <div class="exp-logo"><img src="assets/csi.jpg" alt="CSI International logo"></div>
               <div>
-                <h3 class="exp-company">CSI International</h3>
+                <p class="exp-company">CSI International</p>
                 <p class="exp-role">ERP Software Engineer — Internship</p>
               </div>
             </div>
@@ -274,24 +275,22 @@
             <li>Customized reporting tools that fed directly into supplier management, not just internal dashboards.</li>
           </ul>
           <div class="tags">
-            <span class="tag">QAD</span><span class="tag">Progress 4GL</span><span class="tag">ERP</span><span class="tag">CSV processing</span>
+            <span class="tag">QAD</span><span class="tag">Progress 4GL</span><span class="tag">ERP</span><span class="tag">CSV Processing</span>
           </div>
         </article>
-
       </div>
     </div>
   </section>
 
   <!-- ============ PROJECTS ============ -->
-  <section class="section section-alt" id="projects">
+  <section class="section" id="projects">
     <div class="wrap">
-      <p class="eyebrow">04 · projects</p>
-      <h2 class="section-title">Things I've built</h2>
-      <p class="section-sub">A mix of platform/CI-CD engineering and applied-AI, full-stack builds.</p>
+      <p class="eyebrow">ls ./projects</p>
+      <h2 class="section-title">Projects</h2>
+      <p class="section-sub">A mix of platform/CI-CD engineering and AI full-stack builds.</p>
 
       <div class="project-grid">
-
-        <article class="project-card project-featured">
+        <div class="project-card project-featured">
           <div class="project-top">
             <h3 class="project-title">Secure Cloud Infrastructure Automation</h3>
             <a href="https://github.com/Emna-chebbi/Secure-Cloud-Infra-Automation" class="project-gh" target="_blank" rel="noopener" aria-label="View on GitHub">↗</a>
@@ -307,57 +306,56 @@
             <span class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">Checkov</span>
             <span class="tag">Trivy</span><span class="tag">Prometheus</span><span class="tag">Grafana</span>
           </div>
-        </article>
+        </div>
 
-        <article class="project-card">
+        <div class="project-card">
           <div class="project-top">
             <h3 class="project-title">Enterprise DevSecOps &amp; GitOps Platform</h3>
             <a href="https://github.com/Emna-chebbi/DevSecOps-Project" class="project-gh" target="_blank" rel="noopener" aria-label="View on GitHub">↗</a>
           </div>
           <p class="project-desc">A cloud-native platform that replaces manual deployments with GitOps-driven Kubernetes automation, security controls, and full-stack observability.</p>
-          <div class="tags"><span class="tag">Kubernetes</span><span class="tag">GitOps</span><span class="tag">ArgoCD</span><span class="tag">Helm</span><span class="tag">Prometheus</span></div>
-        </article>
+          <div class="tags"><span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">GitOps</span><span class="tag">ArgoCD</span><span class="tag">Helm</span></div>
+        </div>
 
-        <article class="project-card">
+        <div class="project-card">
           <div class="project-top">
-            <h3 class="project-title">CI/CD Pipeline for a Spring Boot App</h3>
+            <h3 class="project-title">DevOps CI/CD Pipeline for a Spring Boot App</h3>
             <a href="https://github.com/Emna-chebbi/SpringPetClinic.git" class="project-gh" target="_blank" rel="noopener" aria-label="View on GitHub">↗</a>
           </div>
-          <p class="project-desc">End-to-end pipeline with Jenkins, Maven, SonarQube, Selenium, and Docker — automating build, unit/UI tests, code-quality analysis, and containerized deployment.</p>
+          <p class="project-desc">End-to-end pipeline using Jenkins, Maven, SonarQube, Selenium, and Docker — automating build, unit/UI tests, code quality analysis, and deployment.</p>
           <div class="tags"><span class="tag">Jenkins</span><span class="tag">Docker</span><span class="tag">SonarQube</span><span class="tag">Selenium</span></div>
-        </article>
+        </div>
 
-        <article class="project-card">
+        <div class="project-card">
           <div class="project-top">
             <h3 class="project-title">AI-Powered Recruitment &amp; Job Portal</h3>
             <a href="https://github.com/Emna-chebbi/HireLink.git" class="project-gh" target="_blank" rel="noopener" aria-label="View on GitHub">↗</a>
           </div>
-          <p class="project-desc">A job platform where admin-verified recruiters post roles and candidates apply, with AI-driven resume analysis, job matching, and generative recruiter-email drafting.</p>
-          <div class="tags"><span class="tag">Generative AI</span><span class="tag">ATS</span><span class="tag">Full-stack</span></div>
-        </article>
+          <p class="project-desc">A job platform where admin-verified recruiters post roles and candidates apply, with AI-driven ATS resume analysis, job matching, and generative recruiter-email drafting.</p>
+          <div class="tags"><span class="tag">AI Integration</span><span class="tag">ATS</span><span class="tag">Generative AI</span></div>
+        </div>
 
-        <article class="project-card">
+        <div class="project-card">
           <div class="project-top">
-            <h3 class="project-title">Credit Card Fraud Detection</h3>
+            <h3 class="project-title">Credit Card Fraud Detection with Machine Learning</h3>
             <a href="https://github.com/Emna-chebbi/logistic-regression-fraud-detection" class="project-gh" target="_blank" rel="noopener" aria-label="View on GitHub">↗</a>
           </div>
-          <p class="project-desc">A logistic-regression classifier for fraudulent transactions, with preprocessing, class-imbalance handling, and explainable feature analysis on a real financial dataset.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Model evaluation</span></div>
-        </article>
+          <p class="project-desc">A logistic-regression fraud classifier with preprocessing, class-imbalance handling, and explainable feature analysis on a real financial dataset.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Scikit-Learn</span><span class="tag">Fraud Detection</span></div>
+        </div>
 
-        <article class="project-card">
+        <div class="project-card">
           <div class="project-top">
             <h3 class="project-title">Census Income Classification</h3>
             <a href="https://github.com/Emna-chebbi/Census-Income-Dataset" class="project-gh" target="_blank" rel="noopener" aria-label="View on GitHub">↗</a>
           </div>
           <p class="project-desc">A model classifying individuals by income threshold from census data, using demographic and employment features.</p>
-          <div class="tags"><span class="tag">Machine learning</span><span class="tag">Python</span></div>
-        </article>
-
+          <div class="tags"><span class="tag">Machine Learning</span><span class="tag">Python</span></div>
+        </div>
       </div>
 
       <div class="center-cta">
-        <a href="https://github.com/Emna-chebbi?tab=repositories" class="btn btn-ghost" target="_blank" rel="noopener">View more on GitHub</a>
+        <a href="https://github.com/Emna-chebbi?tab=repositories" class="btn btn-outline" target="_blank" rel="noopener">View more on GitHub</a>
       </div>
     </div>
   </section>
@@ -365,98 +363,98 @@
   <!-- ============ CERTIFICATIONS ============ -->
   <section class="section" id="certifications">
     <div class="wrap">
-      <p class="eyebrow">05 · certifications</p>
+      <p class="eyebrow">verify --all certificates</p>
       <h2 class="section-title">Certifications</h2>
 
       <div class="cert-grid">
-        <a class="cert-card" href="https://www.credly.com/badges/b9ed617e-63a0-4667-ad65-f53d13c91956/public_url" target="_blank" rel="noopener">
+        <div class="cert-card">
           <h3 class="cert-title">Certified Security Testing Orchestration Developer</h3>
           <p class="cert-issuer">Harness</p>
           <p class="cert-desc">Security testing orchestration, vulnerability scanning, and secure deployment practices.</p>
-          <span class="cert-view">View credential ↗</span>
-        </a>
-        <a class="cert-card" href="https://www.credly.com/badges/ee7702bb-66e1-4c72-b830-37f9ef7e2fcc/public_url" target="_blank" rel="noopener">
+          <a class="cert-link" href="https://www.credly.com/badges/b9ed617e-63a0-4667-ad65-f53d13c91956/public_url" target="_blank" rel="noopener">View credential ↗</a>
+        </div>
+        <div class="cert-card">
           <h3 class="cert-title">Certified Infrastructure as Code Management Developer</h3>
           <p class="cert-issuer">Harness</p>
           <p class="cert-desc">IaC automation, Git-based workflows, drift detection, and governance-driven infrastructure delivery.</p>
-          <span class="cert-view">View credential ↗</span>
-        </a>
-        <a class="cert-card" href="https://www.linkedin.com/posts/emna-chebbi1_qualys-certified-kubernetes-and-container-activity-7485294258455908352-fo5R" target="_blank" rel="noopener">
+          <a class="cert-link" href="https://www.credly.com/badges/ee7702bb-66e1-4c72-b830-37f9ef7e2fcc/public_url" target="_blank" rel="noopener">View credential ↗</a>
+        </div>
+        <div class="cert-card">
           <h3 class="cert-title">Qualys Certified Specialist — Kubernetes &amp; Container Security</h3>
           <p class="cert-issuer">Qualys</p>
           <p class="cert-desc">Container security across the application lifecycle: image vulnerabilities, runtime protection, hardening.</p>
-          <span class="cert-view">View credential ↗</span>
-        </a>
-        <a class="cert-card" href="https://www.credly.com/badges/d08edfd2-527f-40d2-a76d-3e873b16ed3b/public_url" target="_blank" rel="noopener">
+          <a class="cert-link" href="https://www.linkedin.com/posts/emna-chebbi1_qualys-certified-kubernetes-and-container-activity-7485294258455908352-fo5R" target="_blank" rel="noopener">View credential ↗</a>
+        </div>
+        <div class="cert-card">
           <h3 class="cert-title">Certified Continuous Delivery &amp; GitOps Developer</h3>
           <p class="cert-issuer">Harness</p>
           <p class="cert-desc">Continuous delivery pipelines, GitOps workflows, and deployment automation.</p>
-          <span class="cert-view">View credential ↗</span>
-        </a>
-        <a class="cert-card" href="https://www.credly.com/badges/19ab5840-109c-4e89-a0ea-a6649ccfe2ba/public_url" target="_blank" rel="noopener">
+          <a class="cert-link" href="https://www.credly.com/badges/d08edfd2-527f-40d2-a76d-3e873b16ed3b/public_url" target="_blank" rel="noopener">View credential ↗</a>
+        </div>
+        <div class="cert-card">
           <h3 class="cert-title">IBM Cloud Essentials</h3>
           <p class="cert-issuer">IBM</p>
           <p class="cert-desc">Cloud computing fundamentals, deployment models, and IBM Cloud services.</p>
-          <span class="cert-view">View credential ↗</span>
-        </a>
-        <a class="cert-card" href="https://www.credly.com/badges/7f175080-a846-4cb5-b1bb-649b34e73a56/public_url" target="_blank" rel="noopener">
+          <a class="cert-link" href="https://www.credly.com/badges/19ab5840-109c-4e89-a0ea-a6649ccfe2ba/public_url" target="_blank" rel="noopener">View credential ↗</a>
+        </div>
+        <div class="cert-card">
           <h3 class="cert-title">AWS Cloud Foundations</h3>
           <p class="cert-issuer">AWS Academy</p>
           <p class="cert-desc">AWS cloud concepts, services, security, architecture, and pricing.</p>
-          <span class="cert-view">View credential ↗</span>
-        </a>
-        <a class="cert-card" href="https://www.credly.com/badges/1d93b912-cb85-4905-b33f-e109e0f76a4e/public_url" target="_blank" rel="noopener">
+          <a class="cert-link" href="https://www.credly.com/badges/7f175080-a846-4cb5-b1bb-649b34e73a56/public_url" target="_blank" rel="noopener">View credential ↗</a>
+        </div>
+        <div class="cert-card">
           <h3 class="cert-title">IT Specialist: Python</h3>
           <p class="cert-issuer">Certiport</p>
           <p class="cert-desc">Python fundamentals, data structures, OOP, and algorithmic problem-solving.</p>
-          <span class="cert-view">View credential ↗</span>
-        </a>
-        <a class="cert-card" href="https://learn.365datascience.com/certificates/CC-903D861767/" target="_blank" rel="noopener">
+          <a class="cert-link" href="https://www.credly.com/badges/1d93b912-cb85-4905-b33f-e109e0f76a4e/public_url" target="_blank" rel="noopener">View credential ↗</a>
+        </div>
+        <div class="cert-card">
           <h3 class="cert-title">Machine Learning Certificate</h3>
           <p class="cert-issuer">365 Data Science</p>
           <p class="cert-desc">ML algorithms, data preprocessing, model evaluation, and feature engineering.</p>
-          <span class="cert-view">View credential ↗</span>
-        </a>
+          <a class="cert-link" href="https://learn.365datascience.com/certificates/CC-903D861767/" target="_blank" rel="noopener">View credential ↗</a>
+        </div>
         <div class="cert-card cert-static">
           <h3 class="cert-title">IELTS Academic C1 — English</h3>
           <p class="cert-issuer">British Council</p>
-          <p class="cert-desc">C1-level English proficiency.</p>
+          <p class="cert-desc">C1-level English proficiency, International English Language Testing System.</p>
         </div>
       </div>
 
       <div class="center-cta">
-        <a href="https://www.credential.net/profile/emnachebbi/wallet" class="btn btn-ghost" target="_blank" rel="noopener">View all certifications</a>
+        <a href="https://www.credential.net/profile/emnachebbi/wallet" class="btn btn-outline" target="_blank" rel="noopener">View all certifications</a>
       </div>
     </div>
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section class="section section-alt contact-section" id="contact">
+  <section class="section" id="contact">
     <div class="wrap">
-      <p class="eyebrow">06 · contact</p>
+      <p class="eyebrow">curl -X POST /contact</p>
       <h2 class="section-title">Get in touch</h2>
-      <p class="section-sub">Open to DevOps, DevSecOps, and platform-engineering roles. Reach out any way that's easiest.</p>
+      <p class="section-sub">Open to DevOps, DevSecOps, platform engineering roles. Reach out any of these ways.</p>
       <div class="contact-cards">
         <div class="cc"><span class="cc-k">Phone</span><p class="cc-v">+216 29 009 266</p></div>
         <a class="cc" href="mailto:emna.chebby19@gmail.com"><span class="cc-k">Email</span><p class="cc-v">emna.chebby19@gmail.com</p></a>
         <a class="cc" href="https://www.linkedin.com/in/emna-chebbi1" target="_blank" rel="noopener"><span class="cc-k">LinkedIn</span><p class="cc-v">emna-chebbi1</p></a>
-        <a class="cc" href="assets/Emna-Chebbi-CV.pdf" download><span class="cc-k">Résumé</span><p class="cc-v">Download CV</p></a>
+        <a class="cc" href="assets/Emna-Chebbi-CV.pdf" download><span class="cc-k">Resume</span><p class="cc-v">Download CV</p></a>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
+<footer>
   <div class="wrap footer-inner">
-    <span>emna@devsecops:~$ echo "thanks for stopping by"</span>
+    <span class="footer-brand">emna@devsecops:~$ echo "thanks for stopping by"</span>
     <div class="footer-social">
       <a href="https://www.linkedin.com/in/emna-chebbi1" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
       <a href="https://github.com/Emna-chebbi" target="_blank" rel="noopener" aria-label="GitHub">gh</a>
       <a href="mailto:emna.chebby19@gmail.com" aria-label="Email">@</a>
     </div>
   </div>
-  <p class="copyright">© 2026 Emna Chebbi</p>
+  <p class="copyright">© 2026 Emna Chebbi. Built &amp; deployed via GitHub Actions</p>
 </footer>
 
 <script src="script.js"></script>
