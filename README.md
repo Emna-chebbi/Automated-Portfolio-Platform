@@ -1,4 +1,4 @@
-# DevOps Portfolio Platform
+# Automated Portfolio Platform
 
 A cloud-deployed personal portfolio designed to showcase my technical skills, professional experiences, projects, certifications, and achievements as a digital resume.
 
